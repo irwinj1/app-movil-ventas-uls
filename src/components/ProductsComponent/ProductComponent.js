@@ -3,6 +3,10 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { ApiUri } from '../../utils/variables'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { FlatList } from 'react-native-gesture-handler'
+import { Image } from '@rneui/base'
+import styles from './ProductComponenStyle'
+import { ItemProduct } from './ItemProduct'
 
 export  function ProductComponent() {
     const [products, setProducts] = useState([])
@@ -41,11 +45,21 @@ export  function ProductComponent() {
             {loading ? (
                 <ActivityIndicator size="large" color="#0000ff"  />
             ) : (
-                products.map((product) => (
-                    <View key={product.id}>
-                        <Text>{product.nombre}</Text>
-                    </View>
-                ))
+                <View>
+                    <FlatList
+                    style={styles.container}
+                        data={products}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({item})=>(
+                           <ItemProduct item={item} />
+                        )}
+                    />
+                </View>
+                // products.map((product) => (
+                //     <View key={product.id}>
+                //         <Text>{product.nombre}</Text>
+                //     </View>
+                // ))
             )}
         </View>
     )
