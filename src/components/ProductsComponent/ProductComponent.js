@@ -46,14 +46,19 @@ export  function ProductComponent() {
                 <ActivityIndicator size="large" color="#0000ff"  />
             ) : (
                 <View>
-                    <FlatList
-                    style={styles.container}
-                        data={products}
-                        keyExtractor={(item) => item.id.toString()}
-                        renderItem={({item})=>(
-                           <ItemProduct item={item} />
-                        )}
-                    />
+                    {products.length > 0 ?(
+                        <FlatList
+                        style={styles.container}
+                            data={products}
+                            keyExtractor={(item) => item.id.toString()}
+                            renderItem={({item})=>(
+                               <ItemProduct item={item} />
+                            )}
+                        />
+                    ):(
+                        <Text>No hay productos</Text>
+                    )}
+                    
                 </View>
                 // products.map((product) => (
                 //     <View key={product.id}>

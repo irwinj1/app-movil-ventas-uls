@@ -5,7 +5,9 @@ import { ProductComponent } from '../../components/ProductsComponent'
 export function ProductScreen() {
   
     return (
-      <View>
+      <View style={{flex:1,
+        height:'100vh'
+      }}>
         <ProductComponent />
       </View>
     )

@@ -9,12 +9,9 @@ export function LoginScreen() {
     const navigate = useNavigation()
     
     return (
-        <SafeAreaProvider>
-        <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+        
             <LoginComponent />
-            <Text onPress={()=>navigate.push('Register')}>Registrar</Text>
-        </SafeAreaView>
-        </SafeAreaProvider>
+       
     )
   
 }
