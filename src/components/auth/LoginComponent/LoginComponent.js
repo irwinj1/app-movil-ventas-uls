@@ -35,7 +35,7 @@ export function LoginComponent() {
         loginAuth(token);
         setIsLogin(true);
        
-          navigate.push("Home");
+          navigate.push("Login");
        
       }
       // loginAuth(values.email)

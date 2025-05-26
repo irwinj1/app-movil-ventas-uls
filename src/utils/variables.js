@@ -1,4 +1,4 @@
-const ApiUri = 'http://172.16.8.176:8000/api'
+const ApiUri = 'http://192.168.0.7:8000/api'
 
 export {
     ApiUri
