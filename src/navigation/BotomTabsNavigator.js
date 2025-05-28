@@ -9,7 +9,9 @@ import ProductStackNavigator from "./ProductStackNavigator";
 const Tabs = createBottomTabNavigator();
 export default function BotomTabsNavigator() {
   return (
-    <Tabs.Navigator>
+    <Tabs.Navigator screenOptions={{
+       headerShown: false, 
+    }}>
       <Tabs.Screen
         name="Productos"
         component={ProductStackNavigator}

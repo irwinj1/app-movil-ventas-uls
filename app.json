@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "newArchEnabled": false ,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -20,10 +20,17 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.irwinj1.ventauls"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7a23fbc6-0361-4095-8899-f231a428a2a5"
+      }
+    },
+    "owner": "irwinj1"
   }
 }

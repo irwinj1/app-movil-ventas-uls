@@ -1,19 +1,39 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ProductScreen } from "../screens/ProductScreen";
+import { ProductDetailsComponent } from "../components/ProductsComponent/ProductDetailsComponent";
+import { useNavigation } from "@react-navigation/native";
+import { Button, Icon } from "@rneui/base";
 
 const ProductStack = createStackNavigator();
 
 export default function ProductStackNavigator() {
+  const navigation = useNavigation()
   return (
     <ProductStack.Navigator>
       <ProductStack.Screen
         name="Products"
         component={ProductScreen}
         options={{
-          headerShown: false, // O true si quieres encabezado
+          
           title: "Productos",
+          
+        }}
+      />
+      <ProductStack.Screen
+        name="ProductDetails"
+        component={ProductDetailsComponent}
+        options={{
+         
+          title: "Detalles del Producto",
+          headerLeft: () => (
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}     
+      >
+        <Icon type="material-community" name="chevron-left" />
+      </TouchableOpacity>
+    ),
         }}
       />
       {/* <ProductStack.Screen name="Orders" component={OrdersScreen} />
